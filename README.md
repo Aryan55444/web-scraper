@@ -1,4 +1,4 @@
-# 🌐 Web Scraper - Final Project
+# 🌐 Web Scraper 
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
@@ -7,12 +7,6 @@
 
 > **A comprehensive web scraping application built as a final project demonstration. This tool enables efficient extraction and analysis of web content with a modern, user-friendly interface.**
 
-## 👨‍💻 About the Developer
-
-**Aryan Patel** - Full Stack Developer from India
-- 🎓 Computer Science Enthusiast
-- 🌍 Passionate about data extraction and web technologies
-- 🚀 This project showcases practical implementation of web scraping concepts
 
 ## 📋 Project Overview
 
@@ -209,14 +203,6 @@ Ready-to-use test websites for development and testing:
 - **JavaScript Content**: Tool focuses on static HTML content
 - **Anti-scraping Protection**: Use test websites for development
 
-## 📚 Documentation
-
-For comprehensive technical documentation, see [`DOCUMENTATION.txt`](DOCUMENTATION.txt) which includes:
-- Detailed architecture explanation
-- Complete API documentation
-- Development guidelines
-- Performance optimization details
-
 ## 🤝 Contributing
 
 This is a **final project** demonstrating web scraping concepts. While contributions are welcome, please note:
@@ -227,9 +213,7 @@ This is a **final project** demonstrating web scraping concepts. While contribut
 4. **Document** any new features or modifications
 5. **Submit** pull requests with clear descriptions
 
-## 📄 License
 
-This project is licensed under the **MIT License** - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
@@ -242,9 +226,8 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 
 <div align="center">
 
-**🎓 Final Project - Web Scraping Application**
 
-*Built with ❤️ in India | Comprehensive data extraction made simple*
+
 
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Powered%20by-Streamlit-FF4B4B.svg)](https://streamlit.io/)
