@@ -79,13 +79,13 @@ def scrape_website(url, options, user_agent, timeout, verify_ssl, follow_redirec
         content_type = (response.headers.get('Content-Type') or '').lower()
         if content_type and not any(t in content_type for t in ['text/html', 'application/xhtml+xml']):
             return None, (
-                f"❌ Unsupported content type: {content_type}. The URL may not be an HTML page."
+                f"Unsupported content type: {content_type}. The URL may not be an HTML page."
             )
 
         # Check if content is actually readable text
         if len(content) > 1000 and content.count('\x00') > len(content) * 0.1:
             # Content appears to be binary or heavily encoded
-            return None, "❌ Website returned binary/encoded content that cannot be parsed as text. This often happens with JavaScript-heavy sites like YouTube."
+            return None, "Website returned binary/encoded content that cannot be parsed as text. This often happens with JavaScript-heavy sites like YouTube."
         
         # Parse HTML with fallbacks
         soup = None
@@ -153,10 +153,10 @@ def scrape_website(url, options, user_agent, timeout, verify_ssl, follow_redirec
         return None, _format_timeout_error(timeout)
     
     except requests.exceptions.RequestException as e:
-        return None, f"❌ Request Error: {str(e)}"
+        return None, f"Request Error: {str(e)}"
     
     except Exception as e:
-        return None, f"❌ Unexpected Error: {str(e)}"
+        return None, f"Unexpected Error: {str(e)}"
 
 def _extract_all_text(soup):
     # Remove script and style elements
@@ -169,7 +169,7 @@ def _extract_all_text(soup):
     # Check if text contains too many non-printable characters
     printable_chars = sum(1 for c in text if c.isprintable() or c.isspace())
     if len(text) > 100 and printable_chars / len(text) < 0.7:
-        return "❌ Content appears to be encoded or binary data. This website may not be suitable for text extraction."
+        return "Content appears to be encoded or binary data. This website may not be suitable for text extraction."
     
     # Remove excessive whitespace and empty lines
     lines = [line.strip() for line in text.split('\n') if line.strip()]
@@ -443,34 +443,10 @@ def _format_http_error(error):
     if 'ERROR_MESSAGES' in globals() and status_code in ERROR_MESSAGES:
         error_info = ERROR_MESSAGES[status_code]
         message = f"{error_info['title']}\n\n"
-        message += f"**{error_info['message']}**\n\n"
-        message += "💡 **Suggestions:**\n"
+        message += f"{error_info['message']}\n\n"
+        message += "Suggestions:\n"
         for tip in error_info['tips']:
             message += f"  • {tip}\n"
         return message
     else:
-        return f"❌ HTTP Error {status_code}: {str(error)}"
-
-def _format_connection_error(url):
-    
-    return (
-        "🔌 **Connection Error**\n\n"
-        f"Could not connect to {url}\n\n"
-        "💡 **Suggestions:**\n"
-        "  • Check your internet connection\n"
-        "  • Verify the URL is correct\n"
-        "  • The website may be temporarily down\n"
-        "  • Try again in a moment"
-    )
-
-def _format_timeout_error(timeout):
-    
-    return (
-        "⏱️ **Timeout Error**\n\n"
-        f"Request took longer than {timeout} seconds\n\n"
-        "💡 **Suggestions:**\n"
-        "  • Increase the timeout in Advanced Settings\n"
-        "  • The website may be slow to respond\n"
-        "  • Check your internet connection speed\n"
-        "  • Try again later"
-    )
+        return f"HTTP Error {status_code}: {str(error)}"

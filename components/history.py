@@ -5,7 +5,7 @@ import pandas as pd
 
 def render_history_tab(scrape_history):
     
-    st.subheader("📜 Scraping History")
+    st.subheader("Scraping History")
     
     if scrape_history:
         _display_history_table(scrape_history)
@@ -68,13 +68,13 @@ def _display_history_actions():
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("🗑️ Clear History", use_container_width=True):
+        if st.button("Clear History", use_container_width=True):
             st.session_state.scrape_history = []
             st.success("History cleared!")
             st.rerun()
     
     with col2:
-        if st.button("📥 Export History", use_container_width=True):
+        if st.button("Export History", use_container_width=True):
             df = pd.DataFrame(st.session_state.scrape_history)
             csv = df.to_csv(index=False)
             st.download_button(
@@ -87,6 +87,6 @@ def _display_history_actions():
 
 def _display_empty_history():
     
-    st.info("📭 No scraping history yet. Start scraping to see your activity here!")
+    st.info("No scraping history yet. Start scraping to see your activity here!")
     
     st.markdown("Start by entering a URL in the sidebar and clicking 'Scrape'.")

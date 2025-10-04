@@ -1,5 +1,5 @@
-APP_TITLE = "Web Scraper Pro"
-APP_ICON = "🕷️"
+APP_TITLE = "Web Scraper"
+APP_ICON = None
 APP_VERSION = "1.0.0"
 
 DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -41,7 +41,7 @@ REQUEST_HEADERS = {
 
 ERROR_MESSAGES = {
     403: {
-        "title": "🚫 Access Forbidden",
+        "title": "Access Forbidden",
         "message": "This website is blocking scraping requests.",
         "tips": [
             "Try one of the test websites listed below",
@@ -51,7 +51,7 @@ ERROR_MESSAGES = {
         ]
     },
     404: {
-        "title": "❌ Page Not Found",
+        "title": "Page Not Found",
         "message": "The requested page could not be found.",
         "tips": [
             "Verify the URL is correct",
@@ -60,7 +60,7 @@ ERROR_MESSAGES = {
         ]
     },
     429: {
-        "title": "⏸️ Too Many Requests",
+        "title": "Too Many Requests",
         "message": "Rate limit exceeded.",
         "tips": [
             "Wait a moment before trying again",
@@ -69,7 +69,7 @@ ERROR_MESSAGES = {
         ]
     },
     500: {
-        "title": "⚠️ Server Error",
+        "title": "Server Error",
         "message": "The website's server encountered an error.",
         "tips": [
             "Try again later",

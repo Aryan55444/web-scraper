@@ -1,2 +1,2 @@
 @echo off
-.venv\Scripts\streamlit.exe run app.py
+.\.venv\Scripts\streamlit.exe run app.py

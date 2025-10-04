@@ -1,11 +1,11 @@
 
 
 import streamlit as st
-from config import APP_VERSION, TEST_WEBSITES
+from config import APP_VERSION
 
 def render_about_tab():
     
-    st.subheader("ℹ️ About Web Scraper Pro")
+    st.subheader("About Web Scraper")
     
     _display_features()
     _display_how_to_use()
@@ -26,12 +26,17 @@ def _display_test_websites():
     
     st.markdown("### Test Websites")
     
-    for name, url in TEST_WEBSITES.items():
-        st.markdown(f"- **{name}**: [{url}]({url})")
+    test_sites = [
+        "https://quotes.toscrape.com",
+        "https://books.toscrape.com", 
+        "https://example.com",
+        "https://httpbin.org/html"
+    ]
     
-    st.warning("These are sample websites for testing. Always respect website terms of service.")
+    for i, url in enumerate(test_sites, 1):
+        st.markdown(f"{i}. {url}")
     
-    st.markdown("---")
+    st.info("Sample websites for testing. Always respect website terms of service.")
 
 def _display_important_notes():
     
