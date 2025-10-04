@@ -238,15 +238,7 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 - **Python** community for comprehensive documentation and support
 - **Testing websites** (quotes.toscrape.com, books.toscrape.com) for development support
 
-## 📞 Contact
 
-**Aryan Patel**
-- 📧 [Email Contact]
-- 🌐 [Portfolio/Website]
-- 💼 [LinkedIn Profile]
-- 📍 India
-
----
 
 <div align="center">
 
